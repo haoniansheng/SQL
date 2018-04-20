@@ -21,9 +21,13 @@ FROM
 					period
 				INNER JOIN trainee_period ON period.id = trainee_period.period_id
 				WHERE
-					period.leader_no = 'yr004' AND period.`status`=1
+				period.leader_no = 'yr004'
+					AND period.`status`=1
+					AND period.period='201704'
 			) a
 		INNER JOIN emp ON emp.emp_no = a.emp_no
+	WHERE
+		emp.emp_name = '学生8' 
 	) b
 INNER JOIN (
 	SELECT
